@@ -1,0 +1,5 @@
+#map-container, #listing-map-container {
+  height: 500px;
+  background-color: #e0e0e0;
+  width: 50%;
+}
