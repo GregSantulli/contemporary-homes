@@ -1,0 +1,19 @@
+<h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+<div id="map-container">
+
+</div>
+
+
+<%= link_to "Create New Listing", new_listing_path, {:class => "buttonTo" } %>
+
+<div>
+  <% @all_listings.each do |listing| %>
+    <div class="listing_container">
+      <div class="editable"><%= link_to "#{listing.address}", listing_path(listing) %></div>
+      <div class="editable">Active: <%= listing.active %></div>
+      <div class="editable">Price: $<%= listing.price %></div>
+    </div>
+  <% end %>
+</div>

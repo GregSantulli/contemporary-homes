@@ -1,0 +1,31 @@
+<h1><%= @listing.address %></h1>
+<div>Price: $<%= @listing.price %></div>
+<div>Active: <%= @listing.active %></div>
+
+<%= link_to 'Home', root_path %>
+
+<% @listing.photos.each do |photo| %>
+
+  <div class="listing-image">
+    <img src="<%= photo.photo %>" alt="">
+  </div>
+
+<% end %>
+
+
+
+
+<div id="listing-map-container">
+
+</div>
+
+
+<div class="">
+
+  <div class="property-info-containter" id="<%= @listing.id %>">
+    <div><%= render partial: "edit", locals: {listing: @listing} %></div>
+    <div><%= @listing.price %></div>
+    <div><%= @listing.active %></div>
+  </div>
+
+</div>
