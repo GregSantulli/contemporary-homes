@@ -1,5 +1,6 @@
 #map-container, #listing-map-container {
-  height: 500px;
+  height: 400px;
   background-color: #e0e0e0;
-  width: 50%;
+  width: 100%;
+  display: inline-block;
 }

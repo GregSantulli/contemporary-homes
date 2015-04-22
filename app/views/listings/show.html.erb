@@ -2,17 +2,27 @@
 <div>Price: $<%= @listing.price %></div>
 <div>Active: <%= @listing.active %></div>
 
-<%= link_to 'Home', root_path %>
+<%= link_to 'Home', root_path , class: "btn btn-primary"%>
 
-<% @listing.photos.each do |photo| %>
 
-  <div class="listing-image">
-    <img src="<%= photo.photo %>" alt="">
+  <div id="slider">
+    <ul class="slides">
+      <% @listing.photos.each do |photo| %>
+      <li class="slide">
+        <div class="what">
+          We Ballin
+        </div>
+        <img src="<%= photo.photo %>" alt="">
+      </li>
+      <% end %>
+      <li class="slide">
+         <div class="what">
+          We Ballin
+        </div>
+        <img src="<%= @listing.photos.first.photo %>" alt="">
+      </li>
+    </ul>
   </div>
-
-<% end %>
-
-
 
 
 <div id="listing-map-container">

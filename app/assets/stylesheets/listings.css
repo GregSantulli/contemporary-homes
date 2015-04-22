@@ -1,7 +1,4 @@
-.listing-image img{
-  height: 100px;
 
-}
 
 .new-listing-form-container{
   /*margin: auto;*/
@@ -39,4 +36,63 @@ td{
 
 .listings-table{
   width: 100%
+}
+
+
+
+#slider {
+  width: 720px;
+  height: 400px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+#slider .slides {
+  display: block;
+  width: 6000px;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+
+}
+
+#slider .slide {
+  float: left;
+  list-style-type: none;
+  width: 720px;
+  height: 400px;
+  position: relative;
+
+}
+
+#slider .slide img{
+  width: 100%;
+  min-height: 100%;
+}
+
+.slider-content{
+  position: absolute;
+  top: 250px;
+  padding-left: 50px;
+  height: 100%;
+  width: 100%;
+  color: #fafafa;
+  text-shadow: 1px 1px 10px black;
+}
+
+.slide-title{
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.map-block{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+
+}
+
+.map-left{
+  padding: 100px;
 }
