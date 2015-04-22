@@ -1,10 +1,19 @@
 
 var ready;
+
 ready = function() {
   initializeMap()
+  startResponsiveSlides()
 };
 
 
+$(document).ready(ready);
+$(document).on('page:load', ready);
+
+
+function startResponsiveSlides(){
+  $(".rslides").responsiveSlides();
+};
 
 
 var map;
@@ -20,7 +29,6 @@ function setMarkers() {
     type: 'GET',
     url: 'api/listings'
   }).done(function(response){
-    console.log("ajaxRESPONSE: ", response)
     for (var i = 0; i < response.length; i++) {
 
       var myinfowindow = new google.maps.InfoWindow({
@@ -43,5 +51,4 @@ function setMarkers() {
 }
 
 
-$(document).ready(ready);
-$(document).on('page:load', ready);
+

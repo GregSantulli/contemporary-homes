@@ -4,3 +4,41 @@
   width: 100%;
   display: inline-block;
 }
+
+
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  height: 400px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  }
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 400px;
+  background-color: green;
+  vertical-align: bottom;
+  left: 0;
+  top: 0;
+  }
+
+.rslides li:first-child {
+  position: relative;
+  float: left;
+  }
+
+.rslides img {
+  display: block;
+  min-width: 100%;
+  min-height: 100%;
+  float: left;
+  border: 0;
+  vertical-align: bottom;
+  }
