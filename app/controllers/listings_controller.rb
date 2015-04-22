@@ -4,6 +4,7 @@ class ListingsController < ApplicationController
   end
 
   def new
+    @listing = Listing.new
 
   end
 
@@ -11,7 +12,7 @@ class ListingsController < ApplicationController
     @listing = Listing.new(listing_params)
     # binding.pry
     if @listing.save
-     params[:photos]['photo'].each do |a|
+     params['photos'].each do |a|
       @photo = @listing.photos.create!(:photo => a, :listing_id => @listing.id)
       end
       redirect_to @listing
