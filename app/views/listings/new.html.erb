@@ -74,22 +74,26 @@
     <h4>All Listings</h4>
     <table class="table table-striped">
       <tr>
-        <th>Address</th>
-        <th>City</th>
-        <th>State</th>
-        <th>Zipcode</th>
-        <th>Price</th>
-        <th>Active</th>
+        <th class="table-sort" data-type"address">Address</th>
+        <th class="table-sort" data-type"city">City</th>
+        <th class="table-sort" data-type"state">State</th>
+        <th class="table-sort" data-type"zipcode">Zipcode</th>
+        <th class="table-sort" data-type"price">Price</th>
+        <th class="text-center">Active</th>
       </tr>
 
       <% @all_listings.each do |listing| %>
-      <tr>
+      <tr class="table-body">
         <td><%= listing.address %></td>
         <td><%= listing.city %></td>
         <td><%= listing.state %></td>
         <td><%= listing.zipcode %></td>
         <td><%= listing.price %></td>
-        <td><%= listing.active %></td>
+        <td class="text-center">
+          <% if listing.active %>
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+            <% end %>
+        </td>
       </tr>
       <% end %>
     </table>

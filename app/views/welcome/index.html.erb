@@ -1,19 +1,67 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
 
-<div id="map-container">
+
+<div class="container">
+  <div class="row">
+
+
+    <div class="col-sm-12">
+     <div id="slider">
+      <ul class="slides">
+        <% @all_listings.each do |listing| %>
+        <li class="slide">
+          <div class="slider-content">
+            <div class="slide-title">
+              <%= listing.address %>
+            </div>
+            <div>
+              <%= listing.city %>, <%= listing.state %>
+            </div>
+          </div>
+          <img src="<%= listing.photos.first.photo %>" alt="">
+        </li>
+        <% end %>
+        <li class="slide">
+         <div class="slider-content">
+          <div class="slide-title">
+            <%= @all_listings.first.address %>
+          </div>
+          <div>
+            <%= @all_listings.first.city %>, <%= @all_listings.first.state %>
+          </div>
+        </div>
+        <img src="<%= @all_listings.first.photos.first.photo %>" alt="">
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+<div class="row map-block">
+
+
+  <div class="col-sm-6 map-left">
+
+  <div class="slide-title">Blah Blah</div>
+  <div>Blah blah blah blah blah blah blah blah blah blah blah
+  blah blah blah blah blah blah blah blah blah blah
+blah blah blah blah blah blah blah blah blah blah blah </div>
+  </div>
+
+
+  <div class="col-sm-6">
+    <div id="map-container">
+    </div>
+  </div>
+
+  </div>
+
+  <div class="row">
+
+  <div cl>
+    <%= link_to "Create New Listing", new_listing_path, {:class => "buttonTo btn btn-primary" } %>
+  </div>
+
+
 
 </div>
 
-
-<%= link_to "Create New Listing", new_listing_path, {:class => "buttonTo" } %>
-
-<div>
-  <% @all_listings.each do |listing| %>
-    <div class="listing_container">
-      <div class="editable"><%= link_to "#{listing.address}", listing_path(listing) %></div>
-      <div class="editable">Active: <%= listing.active %></div>
-      <div class="editable">Price: $<%= listing.price %></div>
-    </div>
-  <% end %>
 </div>
