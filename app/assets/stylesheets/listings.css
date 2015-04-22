@@ -2,3 +2,41 @@
   height: 100px;
 
 }
+
+.new-listing-form-container{
+  /*margin: auto;*/
+  width: 30%;
+  min-width: 500px;
+  padding: 50px;
+  border-right: 1px solid #e0e0e0
+}
+
+.new-listing-table-container{
+  padding: 50px;
+  width: 100%;
+
+
+}
+
+.new-listing-page_container{
+  display: flex;
+  width: 100%;
+  top:0px;
+  bottom:0px;
+  position: absolute;
+}
+
+.check-box{
+  height: 27px;
+  line-height: 27px;
+  vertical-align: middle;
+}
+
+td{
+  border:1px solid #e0e0e0;
+  padding: 2px;
+}
+
+.listings-table{
+  width: 100%
+}
