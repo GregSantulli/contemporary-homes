@@ -1,50 +1,48 @@
 
-
 <div class="container">
-
-  <div class="row">
-    <div class="col-sm-12">
+  <div class="row home-slider">
+    <div class="col-sm-12 text-center">
       <ul class="rslides">
         <% @all_listings.each do |listing| %>
-          <% if listing.photos != [] %>
-            <li>
-              <%= image_tag listing.photos.first.photo_url(:banner)%>
-              <!-- <img src="<%= listing.photos.first.photo %>" alt=""> -->
-            </li>
-          <% end %>
+        <% if listing.photos != [] %>
+        <li>
+          <%= image_tag listing.photos.first.photo_url(:large)%>
+          <!-- <img src="<%= listing.photos.first.photo %>" alt=""> -->
+        </li>
+        <% end %>
         <% end %>
       </ul>
     </div>
   </div>
 
 
-<div class="row map-block">
-
-
-  <div class="col-sm-6 map-left">
-
-    <div class="slide-title">Blah Blah</div>
-    <div>Blah blah blah blah blah blah blah blah blah blah blah
-      blah blah blah blah blah blah blah blah blah blah
-      blah blah blah blah blah blah blah blah blah blah blah </div>
-    </div>
-
-
-    <div class="col-sm-6">
-      <div id="map-container">
-      </div>
-    </div>
-
-  </div>
-
   <div class="row">
 
-    <div cl>
-      <%= link_to "Create New Listing", new_listing_path, {:class => "buttonTo btn btn-primary" } %>
+
+    <div class="col-sm-6 map-left">
+
+      <div class="slide-title">Blah Blah</div>
+      <div>Blah blah blah blah blah blah blah blah blah blah blah
+        blah blah blah blah blah blah blah blah blah blah
+        blah blah blah blah blah blah blah blah blah blah blah </div>
+      </div>
+
+
+      <div class="col-sm-6">
+        <div id="map-container">
+        </div>
+      </div>
+
     </div>
 
+    <div class="row">
 
+      <div cl>
+        <%= link_to "Create New Listing", new_listing_path, {:class => "buttonTo btn btn-primary" } %>
+      </div>
+
+
+
+    </div>
 
   </div>
-
-</div>
