@@ -27,17 +27,39 @@ function startResponsiveSlides(){
 var map;
 
 function initializeMap() {
-  var mapOptions = {center: new google.maps.LatLng(41.2258, -73.6650), zoom: 12};
+
+  var mapOptions = {
+    center: new google.maps.LatLng(41.2032948,-73.6428233),
+    zoom: 12,
+    scrollwheel: false,
+  };
+
   map = new google.maps.Map(document.getElementById('map-container'), mapOptions);
   setMarkers()
 }
+
+function getListingPhoto(id){
+  $.ajax({
+    type: 'GET',
+    url: 'api/photo/' + id
+  }).done(function(response){
+    console.log(response)
+    return response
+  })
+
+};
+
 
 function setMarkers() {
   $.ajax({
     type: 'GET',
     url: 'api/listings'
   }).done(function(response){
+    // console.log(response)
     for (var i = 0; i < response.length; i++) {
+      var id = response[i].id
+
+      console.log("listing photo: ", getListingPhoto(id))
 
       var myinfowindow = new google.maps.InfoWindow({
         content: "<div><a href='/listings/" + response[i].id + "'>" + response[i].address + "</a></div>"
@@ -60,11 +82,13 @@ function setMarkers() {
 
 
 
+
+
 function fader() {
   var navBar = $('.navigation_container')
   dt = $(document).scrollTop()
   $('.navigation_container').css(
-    "background-color", "rgba(0,0,0," +  (0.6 + (dt/500)) + ")")
+    "background-color", "rgba(51,61,71," +  (0.6 + (dt/500)) + ")")
 }
 
 
@@ -77,8 +101,10 @@ function miniMenuButtonListener(){
   miniButton.on('click', function(){
     if (buttonContainer.hasClass('active')){
       buttonContainer.hide().removeClass('active')
+      miniButton.css('box-shadow', '')
     }else{
       buttonContainer.show().addClass('active')
+      miniButton.css('box-shadow', '0px 0px 10px white')
     }
   })
 

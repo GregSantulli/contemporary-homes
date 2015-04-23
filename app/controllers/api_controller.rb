@@ -9,4 +9,15 @@ class ApiController < ApplicationController
     render json: @all_listings
   end
 
+
+  def photo
+    p params
+    @photo = Photo.where(listing_id: params[:id]).first
+    render json: @photo
+
+
+  end
+
+
+
 end

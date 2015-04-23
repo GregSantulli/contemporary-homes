@@ -1,10 +1,22 @@
+/*
+body{
+  color: #333D47;
+  max-width: 100%;
+  margin: auto;
 
+}
+*/
+
+.container{
+  width: 100%
+}
 .navigation_container{
   width:100%;
   position: fixed;
   top:0px;
+  left:0px;
   height: 70px;
-  background-color: rgba(0,0,0, 0.6 );
+  background-color: rgba(51,61,71, 0.6 );
   z-index: 10;
   color: #fafafa;
 
@@ -26,6 +38,26 @@
   /*display: inline-block;*/
 }
 
+.banner-text{
+  position: absolute;
+  z-index: 5;
+  width: 50%;
+  left: 25%;
+  margin: auto;
+  bottom: 35%;
+  color: #fafafa;
+  text-shadow: 1px 1px 15px black;
+  font-family: 'Lora', serif;
+
+}
+
+.em4{
+  font-size: 4em
+}
+.em2  {
+  font-size: 2em
+}
+
 .rslides {
   position: relative;
   list-style: none;
@@ -44,6 +76,8 @@
   max-width: 100%;
   left: 0;
   top: 0;
+  max-height: 600px;
+  /*overflow: hidden;*/
 
 }
 
@@ -51,6 +85,7 @@
   position: relative;
   display: block;
   float: left;
+
 }
 
 .rslides img {
@@ -115,11 +150,23 @@
   width: 40px;
   height: 5px;
   margin: auto;
-  background-color: black;
+  background-color: #333D47;
   border-radius: 3px;
   margin-top: 6px;
 
 }
+
+
+@media (max-width: 9970px) {
+
+  .button-container{
+    display: inline;
+
+  }
+
+}
+
+
 
 @media (max-width: 770px) {
 
@@ -135,7 +182,7 @@
   .nav-button{
     display: block;
     text-align: center;
-    background-color: black;
+    background-color: #333D47;
     width: 50%;
     margin-left: 50%;
     padding: 0px;
@@ -149,6 +196,10 @@
     display: block;
   }
 
+  .home-slider{
+    margin-top: 70px;
+  }
+
 }
 
 .vcenter-contents{
@@ -157,3 +208,27 @@
   height: 400px;
 }
 
+
+
+
+.featured-image{
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+
+.featured-image img{
+  min-width: 100%;
+  min-height: 400px;
+  position: absolute;
+  left: 0;
+
+}
+
+.col-sm-4, .col-sm-8, .col-sm-12{
+  padding-left: 0px;
+  padding-right: 0px;
+}

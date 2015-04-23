@@ -1,6 +1,6 @@
 
 
-<div class="container-flux">
+<div class="container">
   <div class="navigation_container">
     <span class="header">
       HOMESWAG
@@ -26,6 +26,14 @@
   </div>
   <div class="row home-slider">
     <div class="col-sm-12 text-center">
+      <div class="banner-text">
+        <span class="em4">
+          <em>"I was in the crack game before baking soda."</em>
+        </span>
+        <div class="em2">-Birdman</div>
+
+      </div>
+
       <ul class="rslides">
         <% @all_listings.each do |listing| %>
         <% if listing.photos != [] %>
@@ -57,7 +65,7 @@
 
   <div class="row">
 
-    <div class="col-sm-6 vcenter-contents">
+    <div class="col-sm-4 vcenter-contents">
       <div class="text-content">
         <div class="slide-title">
           So Fresh.
@@ -75,7 +83,7 @@
       </div>
     </div>
 
-    <div class="col-sm-6">
+    <div class="col-sm-8">
       <div>
         <div id="map-container">
         </div>
@@ -84,19 +92,123 @@
 
   </div>
 
+
+
+
+
+
+
+
+<% @all_listings.each_slice(2) do |slice| %>
+
+
   <div class="row ">
 
-    <div class="col-sm-6 vcenter-contents">
-      <div class="text-content">
+    <div class="col-sm-8 vcenter-contents">
+      <div class="text-content featured-image">
+        <% if slice[0].photos.first != nil %>
+        <%= image_tag slice[0].photos.first.photo_url(:large)%>
+        <% end %>
 
-        <div>
+        <div class="">
 
         </div>
       </div>
     </div>
 
 
-    <div class="col-sm-6 vcenter-contents">
+    <div class="col-sm-4 vcenter-contents">
+      <div class="text-content">
+        <div class="slide-title">
+          Believe Dat.
+        </div>
+        <div>
+          <!-- slice[0].info -->
+          <p>
+            Tony Montana, white leather, soft sofas.
+            Got too many cars, so now I buy chauffeurs.
+            All about my penny like a motherfuckin' loafer.
+            I was in the crack game before bakin' soda.
+          </p>
+
+          <p>
+            Bitch, I'm a OG, bitch, I'm a OG.
+            I'm gettin' high off my money 'til I OD.
+            See you don't know me, them bitches know me.
+            My old hoe's tellin' me go back to gold teeth.
+          </p>
+        </div>
+      </div>
+      <div>
+
+      </div>
+    </div>
+
+  </div>
+
+<% if slice[1] != nil %>
+   <div class="row ">
+
+    <div class="col-sm-4 vcenter-contents">
+      <div class="text-content">
+        <div class="slide-title">
+          Believe Dat.
+        </div>
+        <div>
+          <!-- slice[1] info -->
+          <p>
+            Tony Montana, white leather, soft sofas.
+            Got too many cars, so now I buy chauffeurs.
+            All about my penny like a motherfuckin' loafer.
+            I was in the crack game before bakin' soda.
+          </p>
+
+          <p>
+            Bitch, I'm a OG, bitch, I'm a OG.
+            I'm gettin' high off my money 'til I OD.
+            See you don't know me, them bitches know me.
+            My old hoe's tellin' me go back to gold teeth.
+          </p>
+        </div>
+      </div>
+      <div>
+
+      </div>
+    </div>
+
+    <div class="col-sm-8 vcenter-contents">
+      <div class="text-content featured-image">
+
+        <% if slice[1].photos.first != nil %>
+        <%= image_tag slice[1].photos.first.photo_url(:large)%>
+        <% end %>
+
+        <div class="">
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <% end %>
+
+  <% end %>
+
+    <div class="row ">
+
+    <div class="col-sm-4 vcenter-contents">
+      <div class="text-content featured-image">
+        <%= image_tag @all_listings.first.photos.last.photo_url(:large)%>
+
+        <div class="">
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-4 vcenter-contents">
       <div class="text-content">
         <div class="slide-title">
           Believe Dat.
@@ -121,6 +233,17 @@
 
       </div>
     </div>
+    <div class="col-sm-4 vcenter-contents">
+      <div class="text-content featured-image">
+        <%= image_tag @all_listings.first.photos.first.photo_url(:large)%>
+
+        <div class="">
+
+        </div>
+      </div>
+    </div>
+
+
 
   </div>
 
