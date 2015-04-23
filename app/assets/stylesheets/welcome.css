@@ -1,9 +1,29 @@
 
+.navigation_container{
+  width:100%;
+  position: fixed;
+  top:0px;
+  height: 70px;
+  background-color: rgba(0,0,0, 0.6 );
+  z-index: 10;
+  color: #fafafa;
+
+
+}
+
+.nav-button{
+  display: inline-flex;
+  vertical-align: middle;
+  padding-left: 5%;
+  line-height: 70px;
+  vertical-align: middle;
+}
+
 #map-container, #listing-map-container {
   height: 400px;
   background-color: #e0e0e0;
   width: 100%;
-  display: inline-block;
+  /*display: inline-block;*/
 }
 
 .rslides {
@@ -14,7 +34,7 @@
   max-width: 100%;
   padding: 0;
   margin: 0;
-  }
+}
 
 .rslides li {
   -webkit-backface-visibility: hidden;
@@ -24,20 +44,116 @@
   max-width: 100%;
   left: 0;
   top: 0;
-  }
+
+}
 
 .rslides li:first-child {
   position: relative;
   display: block;
   float: left;
-  }
+}
 
 .rslides img {
   display: block;
-  height: auto;
   float: left;
   width: 100%;
   max-width: 100%;
   border: 0;
+}
+
+.slider-content-box{
+  position: absolute;
+  text-align: left;
+  width: 100%;
+  max-width: 100%;
+  left: 0;
+  top: 0;
+  height: 100%;
+  color: white;
+  text-shadow: 1px 1px 15px black;
+}
+
+.slider-content{
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+
+}
+
+.header{
+  font-weight: bold;
+  font-size: 2em;
+  display: inline-flex;
+  vertical-align: middle;
+  padding-left: 5%;
+  line-height: 70px;
+  vertical-align: middle;
+}
+
+.large-font{
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.text-content{
+  padding: 10%;
+}
+
+.nav-mini-button{
+  height: 50px;
+  width: 50px;
+  background-color: #e0e0e0;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 20;
+  border-radius: 3px;
+  display: none;
+}
+
+.mini-button-bar{
+  width: 40px;
+  height: 5px;
+  margin: auto;
+  background-color: black;
+  border-radius: 3px;
+  margin-top: 6px;
+
+}
+
+@media (max-width: 770px) {
+
+  .text-content{
+    padding: 5%;
   }
+
+  .button-container{
+    display: none;
+
+  }
+
+  .nav-button{
+    display: block;
+    text-align: center;
+    background-color: black;
+    width: 50%;
+    margin-left: 50%;
+    padding: 0px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 1.5em
+
+
+  }
+
+  .nav-mini-button{
+    display: block;
+  }
+
+}
+
+.vcenter-contents{
+  display: flex;
+  align-items: center;
+  height: 400px;
+}
 
