@@ -1,101 +1,10 @@
 
 <div class="new-listing-page_container">
-  <div class="new-listing-form-container">
 
 
 
-    <%= form_for :listing, url: {action: "create"}, html: {class: "form-horizontal"} do |f| %>
-    <div>
-      <div class="form-group">
-        <div class="col-sm-10 col-sm-offset-2">
-          <h4> Create a New Listing </h4>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :address, class: "col-sm-2 control-label" %>
-        <div class="col-sm-10">
-          <%= f.text_field :address, class: "form-control"  %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :city, class: "col-sm-2 control-label" %>
-        <div class="col-sm-10">
-          <%= f.text_field :city, class: "form-control"  %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :state, class: "col-sm-2 control-label" %>
-        <div class="col-sm-10">
-          <%= f.text_field :state, class: "form-control"  %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :zipcode, class: "col-sm-2 control-label" %>
-        <div class="col-sm-10">
-          <%= f.number_field :zipcode, class: "form-control"  %>
-        </div>
-      </div>
 
 
-      <div class="form-group">
-        <%= f.label :price, class: "col-sm-2 control-label" %>
-        <div class="col-sm-10">
-          <%= f.number_field :price, class: "form-control"  %>
-        </div>
-      </div>
+<%= render "listing_table", locals: { all_listings: @all_listings} %>
 
-      <div class="form-group">
-        <div class="check-box col-sm-10 col-sm-offset-2">
-          <%= f.check_box :active %> This home is currently for sale.
-        </div>
-      </div>
-
-      <%= f.fields_for :photos do |p| %>
-      <div class="form-group">
-       <%= p.label :Photos, class: "col-sm-2 control-label" %>
-       <%= p.file_field :photo, :multiple => true, name: "photos[]", class: "check-box col-sm-10"%>
-     </div>
-     <% end %>
-
-     <div>
-      <%= f.submit "Create Listing", class: "col-sm-5 col-sm-offset-2 btn btn-primary"%>
-    </div>
-
-  </div>
-  <% end %>
-
-
-</div>
-  <div class="new-listing-table-container">
-    <h4>All Listings</h4>
-    <table class="table table-striped">
-      <tr>
-        <th class="table-sort" data-type"address">Address</th>
-        <th class="table-sort" data-type"city">City</th>
-        <th class="table-sort" data-type"state">State</th>
-        <th class="table-sort" data-type"zipcode">Zipcode</th>
-        <th class="table-sort" data-type"price">Price</th>
-        <th class="text-center">Active</th>
-      </tr>
-
-      <% @all_listings.each do |listing| %>
-      <tr class="table-body">
-        <td><%= listing.address %></td>
-        <td><%= listing.city %></td>
-        <td><%= listing.state %></td>
-        <td><%= listing.zipcode %></td>
-        <td><%= listing.price %></td>
-        <td class="text-center">
-          <% if listing.active %>
-            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-            <% end %>
-        </td>
-      </tr>
-      <% end %>
-    </table>
-  </div>
 </div>

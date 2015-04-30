@@ -11,6 +11,8 @@ CarrierWave.configure do |config|
   }
 
   # config.cache_dir      = "#{Rails.root}/tmp/uploads" #heroku
+  config.root = Rails.root.join('tmp')
+  config.cache_dir = 'carrierwave'
 
   # config.storage = :aws
 

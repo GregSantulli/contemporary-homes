@@ -10,12 +10,25 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 
-    <script id="listing_template" type="text/x-handlebars-template">
-     {{#each listing}}
-        <div> {{address}} </div>
-        <div> {{price}} </div>
-        <div> {{active}} </div>
-     {{/each}}
+    <script id="image_preview_template" type="text/x-handlebars-template">
+
+          <div class="upload-preview col-sm-1">
+            <div> <img class="image-preview" src="{{image}}"> </div>
+            <div class="file-name">File: {{name}} </div>
+            <div class="file-name">Size: {{size}} KB</div>
+          </div>
+
+  </script>
+
+
+<script id="error_template" type="text/x-handlebars-template">
+
+  <div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Error:</span>
+    {{error}}
+  </div>
+
   </script>
 
   <%= csrf_meta_tags %>

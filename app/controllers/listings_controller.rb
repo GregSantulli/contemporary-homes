@@ -13,17 +13,26 @@ class ListingsController < ApplicationController
   end
 
   def create
+    p params
+    @all_listings = Listing.all
     @listing = Listing.new(listing_params)
     @listing.full_address = get_full_address(@listing)
     # binding.pry
-    if @listing.save && params['photos'] != nil
-     params['photos'].each do |a|
-      @photo = @listing.photos.create!(:photo => a, :listing_id => @listing.id)
+    if @listing.save
+      # binding.pry
+      if params['photos'] != nil
+
+        params['photos'].each do |a|
+          @photo = @listing.photos.create!(:photo => a, :listing_id => @listing.id)
+        end
       end
-      redirect_to @listing
+      # render js: "window.location.pathname='#{new_listing_path}'"
+      redirect_to new_listing_path
     else
        # format.html { render action: 'new' }
-       redirect_to '/'
+       # redirect_to new_listing_path @listing
+       # render "json": @listing.errors.full_messages
+       render 'new'
      end
    end
 

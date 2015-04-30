@@ -28,9 +28,9 @@
     <div class="col-sm-12 text-center">
       <div class="banner-text">
         <span class="em4">
-          <em>"I was in the crack game before baking soda."</em>
+          <em>"Blah blah blah blah blah blah blah blah blah ."</em>
         </span>
-        <div class="em2">-Birdman</div>
+        <div class="em2">-Blah</div>
 
       </div>
 
@@ -43,18 +43,10 @@
               <span class="large-font">
                 <%= listing.address.upcase %>
               </span>
-
-
               <div><%= listing.city.upcase %>, <%= listing.state.upcase %></div>
-
-
             </div>
-
-
-
           </div>
           <%= image_tag listing.photos.first.photo_url(:large)%>
-          <!-- <img src="<%= listing.photos.first.photo %>" alt=""> -->
         </li>
         <% end %>
         <% end %>
@@ -99,7 +91,7 @@
 
 
 
-<% @all_listings.each_slice(2) do |slice| %>
+  <% @all_listings.each_slice(2) do |slice| %>
 
 
   <div class="row ">
@@ -146,8 +138,8 @@
 
   </div>
 
-<% if slice[1] != nil %>
-   <div class="row ">
+  <% if slice[1] != nil %>
+  <div class="row ">
 
     <div class="col-sm-4 vcenter-contents">
       <div class="text-content">
@@ -195,11 +187,11 @@
 
   <% end %>
 
-    <div class="row ">
+<!--   <div class="row ">
 
     <div class="col-sm-4 vcenter-contents">
       <div class="text-content featured-image">
-        <%= image_tag @all_listings.first.photos.last.photo_url(:large)%>
+        <%# image_tag @all_listings.first.photos.last.photo_url(:large)%>
 
         <div class="">
 
@@ -235,7 +227,7 @@
     </div>
     <div class="col-sm-4 vcenter-contents">
       <div class="text-content featured-image">
-        <%= image_tag @all_listings.first.photos.first.photo_url(:large)%>
+        <%# image_tag @all_listings.first.photos.first.photo_url(:large)%>
 
         <div class="">
 
@@ -245,7 +237,7 @@
 
 
 
-  </div>
+  </div> -->
 
   <div class="row">
 
