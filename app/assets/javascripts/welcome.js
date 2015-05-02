@@ -72,6 +72,7 @@ function setMarkers() {
         position: new google.maps.LatLng(response[i].latitude, response[i].longitude),
         map: map,
         infowindow: myinfowindow,
+        icon: 'assets/house112.svg'
       });
 
       google.maps.event.addListener(marker, 'click', function() {
