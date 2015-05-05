@@ -1,6 +1,5 @@
-<div class="new-listing-table-container">
 
-  <h4>All Listings</h4>
+  <h4 class="form-label">All Listings</h4>
 
   <table class="table table-striped">
 
@@ -34,67 +33,6 @@
   </table>
 
 
-  <table class="table table-striped">
-    <h4>Create a New Listing:</h4>
-
-    <tr class="table-body">
-      <%= form_for :listing, url: {action: "create"}, html: {class: "form-horizontal"} do |f| %>
-      <td><%= f.text_field :address, class: "form-control", placeholder: "Address"  %></td>
-      <td><%= f.text_field :city, class: "form-control", placeholder: "City"   %></td>
-      <td><%= f.text_field :state, class: "form-control", placeholder: "State"   %></td>
-      <td><%= f.number_field :zipcode, class: "form-control", placeholder: "Zipcode"   %></td>
-      <td> <%= f.number_field :price, class: "form-control", placeholder: "Price"   %></td>
-      <td> <%= f.check_box :active %></td>
-    </tr>
-
-  </table>
-
-  <div class="container">
-
-    <div class="row">
-
-
-      <div class="col-sm-3">
-       <div class="image-uploader-button">
-        <div class="btn btn-default btn-file">
-          <%= f.fields_for :photos do |p| %>
-          <%= p.file_field :photo, :multiple => true, name: "photos[]", id: "imgInp"%>
-          Choose Images...
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="image-uploader row">
-  </div>
-</div>
-<div class="container">
-
-  <div class="row">
-
-    <div class="col-sm-3">
-     <%= f.submit "Create Listing", class: "create-button btn btn-primary"%>
-   </div>
-
-   <div class="errors col-sm-5">
-    <% if @listing.errors.any?  %>
-    <div class="">
-      <div class="alert alert-danger " role="alert">
-        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-        <span class="sr-only">Error:</span>
-        <%= @listing.errors.full_messages.first%>
-      </div>
-    </div>
-    <% end %>
-
-  </div>
-
-</div>
-
-</div>
-<% end %>
-
-
 
 
 
@@ -109,5 +47,3 @@
 </div>
 
 
-
-</div>
