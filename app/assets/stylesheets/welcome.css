@@ -217,14 +217,18 @@ body{
   padding: 0px;
   overflow: hidden;
   text-align: center;
-  position: relative;
+  position: absolute;
 }
 
 .featured-image img{
+  position:relative;
+  display: inline-block;
   min-width: 100%;
-  min-height: 400px;
-  position: absolute;
-  left: 0;
+  min-height: 100%;
+  text-align: center;
+  margin: auto;
+  /*left: 0;*/
+  /*margin: auto;*/
 
 }
 

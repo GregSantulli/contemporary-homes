@@ -2,19 +2,32 @@
   border: 1px dotted red;
   }*/
 
-  .new-listing-form-container{
-    /*margin: auto;*/
-    width: 20%;
-    min-width: 500px;
-    padding: 50px;
-    border-right: 1px solid #e0e0e0
+
+  .new_page_container{
+    display: inline-flex;
+    width: 100%
   }
 
-  .new-listing-table-container{
-    padding: 50px;
+  .new-listing-form-container{
+    /*margin: auto;*/
+    min-width: 500px;
+    width: 20%;
+    border-right: 1px solid #e0e0e0;
+    display: inline-block;
+    /*display: none;*/
+  }
+
+  .listing-table-container{
+    padding-left: 20px;
     width: 100%;
+    display: inline-block;
 
+  }
 
+  .form-label{
+    height: 70px;
+    line-height: 70px;
+    vertical-align: middle;
   }
 
   .new-listing-page_container{
@@ -26,9 +39,14 @@
   }
 
   .check-box{
-    height: 27px;
-    line-height: 27px;
+    height: 34px;
+    line-height: 34px;
     vertical-align: middle;
+    padding-left:
+  }
+
+  .active-text{
+    padding-left: 5px;
   }
 
   td{
@@ -103,15 +121,22 @@
     cursor: inherit;
   }
 
+  .image-uploader{
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    display: block;
+    margin-bottom: 10px;
+  }
+
   .upload-preview{
     border: 1px solid  #e0e0e0;
     padding: 15px;
     margin: 15px;
     border-radius: 3px;
-    width: 15%;
+    width: 50%;
     display: inline-block;
     margin-left: 15px;
-    height: 200px;
 
 
   }
