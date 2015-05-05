@@ -10,6 +10,7 @@
       <th class="table-sort" data-type"zipcode">Zipcode</th>
       <th class="table-sort" data-type"price">Price</th>
       <th class="text-center">Active</th>
+      <th class="table-sort"></th>
     </tr>
 
 
@@ -27,6 +28,7 @@
         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
         <% end %>
       </td>
+      <td><%= link_to "Edit", edit_listing_path(listing) %></td>
     </tr>
 
     <% end %>

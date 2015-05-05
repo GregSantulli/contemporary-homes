@@ -152,7 +152,7 @@
 
   .no_background{
     background-color: white;
-    border: none;
+    border: 0px solid white;
   }
 
   .errors{
