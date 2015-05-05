@@ -40,7 +40,19 @@ class ListingsController < ApplicationController
     listing = Listing.find(params[:id])
     listing.update_attributes(listing_params)
     listing.save
-    redirect_to listing_path
+
+    redirect_to listing_path listing
+  end
+
+  def edit
+    @listing = Listing.find(params[:id])
+
+  end
+
+  def destroy
+    listing = Listing.find(params[:id])
+    listing.destroy
+    redirect_to new_listing_path
   end
 
   private
