@@ -10,17 +10,16 @@
 
 
   .new-listing-form-container{
-    /*margin: auto;*/
     min-width: 500px;
     padding-right: 20px;
     width: 20%;
     border-right: 1px solid #e0e0e0;
     display: inline-block;
-    /*display: none;*/
   }
 
   .listing-table-container{
     padding-left: 20px;
+    padding-right: 20px;
     width: 100%;
     display: inline-block;
 
@@ -152,16 +151,6 @@
     height:52px;
   }
 
-  .no_background{
-    background-color: white;
-    border: 0px solid white;
-  }
-
-  .errors{
-    /*width: 100%*/
-    /*border: 1px solid red*/
-
-  }
 
   .file-name{
     overflow: hidden;
