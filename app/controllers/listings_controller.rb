@@ -17,11 +17,8 @@ class ListingsController < ApplicationController
     @all_listings = Listing.all
     @listing = Listing.new(listing_params)
     @listing.full_address = get_full_address(@listing)
-    # binding.pry
     if @listing.save
-      # binding.pry
       if params['photos'] != nil
-
         params['photos'].each do |a|
           @photo = @listing.photos.create!(:photo => a, :listing_id => @listing.id)
         end
@@ -39,8 +36,13 @@ class ListingsController < ApplicationController
    def update
     listing = Listing.find(params[:id])
     listing.update_attributes(listing_params)
-    listing.save
-
+    if listing.save
+      if params['photos'] != nil
+        params['photos'].each do |a|
+          @photo = listing.photos.create!(:photo => a, :listing_id => listing.id)
+        end
+      end
+    end
     redirect_to new_listing_path
   end
 
