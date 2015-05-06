@@ -41,7 +41,7 @@ class ListingsController < ApplicationController
     listing.update_attributes(listing_params)
     listing.save
 
-    redirect_to listing_path listing
+    redirect_to new_listing_path
   end
 
   def edit
