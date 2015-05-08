@@ -1,0 +1,11 @@
+<h1>User#login</h1>
+<p>Find me in app/views/user/login.html.erb</p>
+<div>
+	<%= form_for :user, url: 'user/authenticate', method: 'post' do |f| %>
+		<%= f.label 'User Name' %>
+		<%= f.text_field :user_name %>
+		<%= f.label 'Password' %>
+		<%= f.password_field :password_digest%>
+		<%= f.submit %>
+	<% end %>
+</div>

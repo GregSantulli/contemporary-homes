@@ -1,6 +1,7 @@
 class ListingsController < ApplicationController
 
   include ListingsHelper
+  before_action :valid_user, only: [:create, :new, :edit, :update]
 
   def show
     @listing = Listing.find(params[:id])
@@ -13,7 +14,6 @@ class ListingsController < ApplicationController
   end
 
   def create
-    p params
     @all_listings = Listing.all
     @listing = Listing.new(listing_params)
     @listing.full_address = get_full_address(@listing)
@@ -62,6 +62,11 @@ class ListingsController < ApplicationController
   def listing_params
     params.require(:listing).permit(:address, :city, :state, :zipcode, :active, :price)
   end
+
+  def valid_user
+    redirect_to :root unless session[:user_id] 
+  end
+
 
 
 end

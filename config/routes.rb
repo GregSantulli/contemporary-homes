@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/admin', to: 'user#login'
+  post 'user/authenticate'
   # get 'listings/show'
 
   get 'welcome/index'
@@ -8,9 +10,6 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
-
-
-
 
   # Example of regular route:
     get 'listings' => 'welcome#listings'
