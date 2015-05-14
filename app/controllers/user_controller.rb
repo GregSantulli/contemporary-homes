@@ -1,5 +1,7 @@
 class UserController < ApplicationController
 
+  include UserHelper
+
   def login
   end
 
