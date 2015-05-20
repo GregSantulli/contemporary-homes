@@ -1,16 +1,27 @@
 
 
 <div class="container">
+
+
+
   <div class="navigation_container">
     <span class="header">
       CONTEMPORARY HOMES
     </span>
 
     <span class="button-container">
-      <span class="nav-button">BUTTON</span>
-      <span class="nav-button">BUTTON</span>
-      <span class="nav-button">BUTTON</span>
-      <span class="nav-button">BUTTON</span>
+      <span class="nav-button">ABOUT</span>
+      <span class="nav-button">HOMES</span>
+      <span class="nav-button">BROKERS</span>
+      <span class="nav-button">CONTACT</span>
+       <% if current_user %>
+        <div class="admin_panel">
+          Logged in as Administrator
+          <%= link_to "Create Listings", new_listing_path, class: "btn btn-success" %>
+          <%= link_to "Logout", logout_path, class: "btn btn-danger" %>
+        </div>
+      <% end %>
+
     </span>
 
 
@@ -170,64 +181,11 @@
 
 <% end %>
 
-<!--   <div class="row ">
-
-    <div class="col-sm-4 vcenter-contents">
-      <div class="text-content featured-image">
-        <%# image_tag @all_listings.first.photos.last.photo_url(:large)%>
-
-        <div class="">
-
-        </div>
-      </div>
-    </div>
-
-
-    <div class="col-sm-4 vcenter-contents">
-      <div class="text-content">
-        <div class="slide-title">
-          Believe Dat.
-        </div>
-        <div>
-          <p>
-            Tony Montana, white leather, soft sofas.
-            Got too many cars, so now I buy chauffeurs.
-            All about my penny like a motherfuckin' loafer.
-            I was in the crack game before bakin' soda.
-          </p>
-
-          <p>
-            Bitch, I'm a OG, bitch, I'm a OG.
-            I'm gettin' high off my money 'til I OD.
-            See you don't know me, them bitches know me.
-            My old hoe's tellin' me go back to gold teeth.
-          </p>
-        </div>
-      </div>
-      <div>
-
-      </div>
-    </div>
-    <div class="col-sm-4 vcenter-contents">
-      <div class="text-content featured-image">
-        <%# image_tag @all_listings.first.photos.first.photo_url(:large)%>
-
-        <div class="">
-
-        </div>
-      </div>
-    </div>
-
-
-
-  </div> -->
 
   <div class="row">
 
-    <div class="col-sm-3">
-      <%= link_to "Create New Listing", new_listing_path, {:class => "buttonTo btn btn-primary" } %>
-    </div>
 
+          <%= link_to "Admin Login", admin_path, {:class => "buttonTo btn btn-primary" } unless current_user %>
 
 
   </div>

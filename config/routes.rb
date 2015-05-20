@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get '/admin', to: 'user#login'
   post 'user/authenticate'
+  get '/logout', to: 'user#logout'
   # get 'listings/show'
 
   get 'welcome/index'

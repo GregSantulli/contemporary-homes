@@ -1,5 +1,7 @@
 class UserController < ApplicationController
 
+  include UserHelper
+
   def login
   end
 
@@ -12,6 +14,11 @@ class UserController < ApplicationController
   	else
   		redirect_to 'user/authenticate'
   	end
+  end
+
+  def logout
+    session.destroy
+    redirect_to '/'
   end
 
 end

@@ -3,9 +3,6 @@
 var individualMap;
 
 function initializeIndividualMap(response) {
-
-
-
   var mapOptions = {
     center: new google.maps.LatLng(response.latitude, response.longitude),
     zoom: 15,
@@ -51,17 +48,12 @@ function setMarker(response){
 function handleFileSelect(e) {
 
   if(!e.target.files) return;
-
   var selectedFiles = e.target.files
-
   var filesArray = Array.prototype.slice.call(selectedFiles)
-
   filesArray.forEach(function (f) {
-
     if(!f.type.match("image.*")) {
       return;
     }
-
     var reader = new FileReader();
     reader.onload = function(e) {
       var image =  e.target.result

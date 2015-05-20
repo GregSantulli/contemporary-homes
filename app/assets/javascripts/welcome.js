@@ -18,8 +18,8 @@ function startResponsiveSlides(){
   auto: true,             // Boolean: Animate automatically, true or false
   speed: 1500,            // Integer: Speed of the transition, in milliseconds
   timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
-  pause: true,           // Boolean: Pause on hover, true or false
-  pauseControls: true,    // Boolean: Pause when hovering controls, true or false
+  pause: false,           // Boolean: Pause on hover, true or false
+  pauseControls: false,    // Boolean: Pause when hovering controls, true or false
 });
 };
 
@@ -58,23 +58,17 @@ function setMarkers() {
     type: 'GET',
     url: 'api/listings'
   }).done(function(response){
-    // console.log(response)
     for (var i = 0; i < response.length; i++) {
       var id = response[i].id
-
-      console.log("listing photo: ", getListingPhoto(id))
-
       var myinfowindow = new google.maps.InfoWindow({
         content: "<div><a href='/listings/" + response[i].id + "'>" + response[i].address + "</a></div>"
       });
-
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(response[i].latitude, response[i].longitude),
         map: map,
         infowindow: myinfowindow,
         icon: 'assets/house112.svg'
       });
-
       google.maps.event.addListener(marker, 'click', function() {
         this.infowindow.open(map,this);
       });
@@ -83,9 +77,6 @@ function setMarkers() {
     console.log("fail")
   })
 }
-
-
-
 
 
 function fader() {
@@ -98,10 +89,8 @@ function fader() {
 
 
 function miniMenuButtonListener(){
-
   var miniButton = $('.nav-mini-button')
   var buttonContainer = $('.button-container')
-
   miniButton.on('click', function(){
     if (buttonContainer.hasClass('active')){
       buttonContainer.hide().removeClass('active')
@@ -111,5 +100,4 @@ function miniMenuButtonListener(){
       miniButton.css('box-shadow', '0px 0px 10px white')
     }
   })
-
 };
