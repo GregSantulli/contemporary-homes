@@ -16,4 +16,9 @@ class UserController < ApplicationController
   	end
   end
 
+  def logout
+    session.destroy
+    redirect_to '/'
+  end
+
 end

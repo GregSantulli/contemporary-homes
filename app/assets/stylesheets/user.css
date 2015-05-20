@@ -1,0 +1,9 @@
+.admin_panel{
+  position: fixed;
+  right: 20px;
+  top: 0px;
+  line-height: 70px;
+  vertical-align: middle;
+  color: white;
+}
+
