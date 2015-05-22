@@ -1,11 +1,8 @@
-/*
-body{
-  color: #333D47;
-  max-width: 100%;
-  margin: auto;
 
+body{
+  font-family: 'Open Sans', sans-serif;
 }
-*/
+
 
 .container{
   width: 100%
@@ -19,6 +16,8 @@ body{
   background-color: rgba(51,61,71, 0.6 );
   z-index: 10;
   color: #fafafa;
+  letter-spacing: 2px;
+
 
 
 }
@@ -128,6 +127,8 @@ body{
 .large-font{
   font-size: 2em;
   font-weight: bold;
+  letter-spacing: 2px;
+
 }
 
 .text-content{
@@ -235,4 +236,29 @@ body{
 .col-sm-4, .col-sm-8, .col-sm-12{
   padding-left: 0px;
   padding-right: 0px;
+}
+
+.footer{
+  width: 100%;
+  background-color: rgba(51,61,71, 1);
+  padding: 20px;
+  color: #cecece;
+}
+
+.footer_object{
+  padding-left: 5%;
+  padding-right: 5%;
+  height: 200px;
+}
+
+.footer_header{
+  font-size: 2em;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #cecece
+}
+
+.copyright{
+  margin-top: 70px;
 }
