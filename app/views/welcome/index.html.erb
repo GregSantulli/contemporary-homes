@@ -1,38 +1,46 @@
 
 
-<div class="container">
-
-
-
-
-  <div class="navigation_container">
-    <span class="header">
-      CONTEMPORARY HOMES
-    </span>
-
-    <span class="button-container">
-      <span class="nav-button">ABOUT</span>
-      <span class="nav-button">HOMES</span>
-      <span class="nav-button">BROKERS</span>
-      <span class="nav-button">CONTACT</span>
-    </span>
-
-
-    <div class="nav-mini-button">
-      <div class="mini-button-bar"></div>
-      <div class="mini-button-bar"></div>
-      <div class="mini-button-bar"></div>
-      <div class="mini-button-bar"></div>
-
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">CONTEMPORARY HOMES</a>
     </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">About</a></li>
 
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Homes <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <% @all_listings.each do |listing| %>
+            <li><a href="/listings/<%= listing.id %>"><%= listing.address %></a></li>
+            <% end %>
+          </ul>
+        </li>
+        <li><a href="#contact">Agents</a></li>
+        <li><a href="#contact">Contact</a></li>
 
+      </ul>
+    </div><!--/.nav-collapse -->
   </div>
+</nav>
+
+
+
+<div class="container-flux">
+
+
   <div class="row home-slider">
     <div class="col-sm-12 text-center">
      <!--  <div class="banner-text">
         <span class="em4">
-          <em>"Blah blah blah blah blah blah blah blah blah ."</em>
+          <em>Banner</em>
         </span>
         <div class="em2">-Blah</div>
 
@@ -99,7 +107,7 @@
 <div class="row ">
 
   <div class="col-sm-8 vcenter-contents">
-    <div class="text-content featured-image">
+    <div class="featured-image">
       <% if slice[0].photos.first != nil %>
       <%= image_tag slice[0].photos.first.photo_url(:large)%>
       <% end %>
@@ -156,7 +164,7 @@
  </div>
 
  <div class="col-sm-8 vcenter-contents">
-  <div class="text-content featured-image">
+  <div class="featured-image">
 
     <% if slice[1].photos.first != nil %>
     <%= image_tag slice[1].photos.first.photo_url(:large)%>
@@ -175,15 +183,15 @@
 <% end %>
 
 
-  <div class="row">
+<div class="row">
 
 
 
 
 
-  </div>
+</div>
 
 </div>
 
 
- <%= render "layouts/footer" %>
+<%= render "layouts/footer" %>
