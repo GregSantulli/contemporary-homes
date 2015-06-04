@@ -10,7 +10,6 @@ class ListingsController < ApplicationController
   def new
     @listing = Listing.new
     @all_listings = Listing.all
-
   end
 
   def create
@@ -23,12 +22,8 @@ class ListingsController < ApplicationController
           @photo = @listing.photos.create!(:photo => a, :listing_id => @listing.id)
         end
       end
-      # render js: "window.location.pathname='#{new_listing_path}'"
       redirect_to new_listing_path
     else
-       # format.html { render action: 'new' }
-       # redirect_to new_listing_path @listing
-       # render "json": @listing.errors.full_messages
        render 'new'
      end
    end
@@ -64,7 +59,7 @@ class ListingsController < ApplicationController
   end
 
   def valid_user
-    redirect_to :root unless session[:user_id] 
+    redirect_to :root unless session[:user_id]
   end
 
 

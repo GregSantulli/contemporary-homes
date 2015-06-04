@@ -14,8 +14,6 @@ class ApiController < ApplicationController
     p params
     @photo = Photo.where(listing_id: params[:id]).first
     render json: @photo
-
-
   end
 
 

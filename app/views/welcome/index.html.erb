@@ -49,6 +49,9 @@
       <ul class="rslides">
         <% @all_listings.each do |listing| %>
         <% if listing.photos != [] %>
+
+        <% listing.photos.each do |photo| %>
+
         <li>
           <div class="slider-content-box">
             <div class="slider-content">
@@ -58,8 +61,9 @@
               <div><%= listing.city.upcase %>, <%= listing.state.upcase %></div>
             </div>
           </div>
-          <%= image_tag listing.photos.first.photo_url(:large)%>
+          <%= image_tag photo.photo_url(:large)%>
         </li>
+        <% end %>
         <% end %>
         <% end %>
       </ul>
@@ -108,8 +112,8 @@
 
   <div class="col-sm-8 vcenter-contents">
     <div class="featured-image">
-      <% if slice[0].photos.first != nil %>
-      <%= image_tag slice[0].photos.first.photo_url(:large)%>
+      <% if slice[0].photos.last != nil %>
+      <%= image_tag slice[0].photos.last.photo_url(:large)%>
       <% end %>
 
       <div class="">
@@ -166,8 +170,8 @@
  <div class="col-sm-8 vcenter-contents">
   <div class="featured-image">
 
-    <% if slice[1].photos.first != nil %>
-    <%= image_tag slice[1].photos.first.photo_url(:large)%>
+    <% if slice[1].photos.last != nil %>
+    <%= image_tag slice[1].photos.last.photo_url(:large)%>
     <% end %>
 
     <div class="">

@@ -19,7 +19,8 @@ function startResponsiveSlides(){
   speed: 1500,            // Integer: Speed of the transition, in milliseconds
   timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
   pause: false,           // Boolean: Pause on hover, true or false
-  pauseControls: false,    // Boolean: Pause when hovering controls, true or false
+  pauseControls: false,
+  random: true,     // Boolean: Pause when hovering controls, true or false
 });
 };
 

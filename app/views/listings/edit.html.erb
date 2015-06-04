@@ -129,7 +129,7 @@
 
     <% @listing.photos.each do |photo| %>
     <div class="upload-preview">
-      <div> <img class="image-preview" src="<%= photo.photo %>"> </div>
+      <div> <img class="image-preview" src="<%= photo.photo_url(:small) %>"> </div>
       <div class="file-name">File:</div>
 
     </div>
