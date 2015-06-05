@@ -9,6 +9,9 @@
       <th class="table-sort" data-type"state">State</th>
       <th class="table-sort" data-type"zipcode">Zipcode</th>
       <th class="table-sort" data-type"price">Price</th>
+      <th class="table-sort" data-type"bedroom">Beds</th>
+      <th class="table-sort" data-type"bathroom">Baths</th>
+      <th class="table-sort" data-type"footage">SqFt</th>
       <th class="table-sort" data-type"photo-count">Photos</th>
       <th class="text-center">Active</th>
       <th class="table-sort"></th>
@@ -24,6 +27,9 @@
       <td><%= listing.state %></td>
       <td><%= listing.zipcode %></td>
       <td><%= listing.price %></td>
+      <td><%= listing.bedroom %></td>
+      <td><%= listing.bathroom %></td>
+      <td><%= listing.footage %></td>
       <td><%= listing.photos.count %></td>
       <td class="text-center">
         <% if listing.active %>

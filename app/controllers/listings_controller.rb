@@ -55,7 +55,7 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:address, :city, :state, :zipcode, :active, :price)
+    params.require(:listing).permit(:address, :city, :state, :zipcode, :bedroom, :bathroom, :footage, :active, :price)
   end
 
   def valid_user

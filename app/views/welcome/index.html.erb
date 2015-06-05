@@ -52,7 +52,7 @@
 
         <% listing.photos.each do |photo| %>
 
-        <li>
+        <li><a href="/listings/<%= listing.id %>">
           <div class="slider-content-box">
             <div class="slider-content">
               <span class="large-font">
@@ -62,39 +62,40 @@
             </div>
           </div>
           <%= image_tag photo.photo_url(:large)%>
-        </li>
-        <% end %>
-        <% end %>
-        <% end %>
-      </ul>
-    </div>
+        </a>
+      </li>
+      <% end %>
+      <% end %>
+      <% end %>
+    </ul>
   </div>
+</div>
 
 
-  <div class="row">
+<div class="row">
 
-    <div class="col-sm-4 vcenter-contents">
-      <div class="text-content">
-        <div class="slide-title">
-          LOREM IPSUM
-        </div>
-        <div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-          <p>
-           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-         </p>
-       </div>
+  <div class="col-sm-4 vcenter-contents">
+    <div class="text-content">
+      <div class="slide-title">
+        LOREM IPSUM
+      </div>
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <p>
+         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+       </p>
      </div>
    </div>
+ </div>
 
-   <div class="col-sm-8">
-    <div>
-      <div id="map-container">
-      </div>
+ <div class="col-sm-8">
+  <div>
+    <div id="map-container">
     </div>
   </div>
+</div>
 
 </div>
 
@@ -133,10 +134,20 @@
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
 
-        <p>
-         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-       </p>
+        <div class="details container">
+         <div class="row">
+          <div class="col-sm-6"><%= slice[0].bedroom %> Bed</div>
+           <div class="col-sm-6"><%= slice[0].bathroom %> Bath</div>
+         </div>
+         <div class="row">
+          <div class="col-sm-6"><%= slice[0].footage %> SqFt </div>
+           <div class="col-sm-6"><span class="sold">SOLD</span></div>
+         </div>
+       </div>
+
      </div>
+     <%= link_to "See More", listing_path(slice[0]), class: "btn btn-default" %>
+
    </div>
    <div>
 
@@ -157,10 +168,21 @@
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
-        <p>
-         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-       </p>
+
+        <div class="details container">
+         <div class="row">
+           <div class="col-sm-6"><%= slice[1].bedroom %> Bed</div>
+           <div class="col-sm-6"><%= slice[1].bathroom %> Bath</div>
+         </div>
+         <div class="row">
+           <div class="col-sm-6"><%= slice[1].footage %> SqFt</div>
+           <div class="col-sm-6"><span class="sold">SOLD</span></div>
+         </div>
+       </div>
+
      </div>
+     <%= link_to "See More", listing_path(slice[1]), class: "btn btn-default" %>
+
    </div>
    <div>
 
