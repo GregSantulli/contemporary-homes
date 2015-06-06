@@ -1,13 +1,13 @@
 
 function startResponsiveSlides(){
   $(".rslides").responsiveSlides({
-  auto: true,
-  speed: 1500,
-  timeout: 4000,
-  pause: false,
-  pauseControls: false,
-  random: true,
-});
+    auto: true,
+    speed: 1500,
+    timeout: 4000,
+    pause: false,
+    pauseControls: false,
+    random: true,
+  });
 };
 
 
@@ -87,10 +87,22 @@ function miniMenuButtonListener(){
 
 
 var ready = function() {
-  initializeMap()
-  startResponsiveSlides()
-  $(document).bind('scroll', fader);
 };
 
 
-$(document).ready(ready);
+$(window).load(function(){
+  initializeMap()
+  $(document).bind('scroll', fader);
+});
+
+$(document).on('page:load', function(){
+  initializeMap()
+  startResponsiveSlides()
+});
+
+$(document).ready(function(){
+  startResponsiveSlides()
+  $(document).bind('scroll', fader);
+
+
+})

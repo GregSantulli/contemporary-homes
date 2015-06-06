@@ -82,7 +82,6 @@ var listings;
 listings = function() {
   getListingData();
   imageListener();
-
 };
 
 
