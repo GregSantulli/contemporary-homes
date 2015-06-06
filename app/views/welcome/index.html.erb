@@ -1,57 +1,16 @@
-
-
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">CONTEMPORARY HOMES</a>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#about">About</a></li>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Homes <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <% @all_listings.each do |listing| %>
-            <li><a href="/listings/<%= listing.id %>"><%= listing.address %></a></li>
-            <% end %>
-          </ul>
-        </li>
-        <li><a href="#contact">Agents</a></li>
-        <li><a href="#contact">Contact</a></li>
-
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div>
-</nav>
+    <%= render "nav", locals: { all_listings: @all_listings} %>
 
 
 
-<div class="container-flux">
+<div class="container">
 
 
   <div class="row home-slider">
     <div class="col-sm-12 text-center">
-     <!--  <div class="banner-text">
-        <span class="em4">
-          <em>Banner</em>
-        </span>
-        <div class="em2">-Blah</div>
-
-      </div> -->
-
       <ul class="rslides">
         <% @all_listings.each do |listing| %>
         <% if listing.photos != [] %>
-
         <% listing.photos.each do |photo| %>
-
         <li><a href="/listings/<%= listing.id %>">
           <div class="slider-content-box">
             <div class="slider-content">
@@ -74,7 +33,7 @@
 
 <div class="row">
 
-  <div class="col-sm-4 vcenter-contents">
+  <div class="col-sm-8 vcenter-contents">
     <div class="text-content">
       <div class="slide-title">
         LOREM IPSUM
@@ -90,7 +49,7 @@
    </div>
  </div>
 
- <div class="col-sm-8">
+ <div class="col-sm-4">
   <div>
     <div id="map-container">
     </div>
@@ -131,10 +90,10 @@
       </div>
       <div>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Dramatically situated on a commanding hilltop overlooking private pond. Sophisticated stone and wood Modern featuring walls of windows, steel beams and ceilings, specialty wood and matte bluestone floors.
         </p>
 
-        <div class="details container">
+        <div class="details container-flux">
          <div class="row">
           <div class="col-sm-6"><%= slice[0].bedroom %> Bed</div>
            <div class="col-sm-6"><%= slice[0].bathroom %> Bath</div>
@@ -164,12 +123,11 @@
       <div class="slide-title">
         <%= slice[1].address.upcase %>
       </div>
-      <div>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Total Privacy, Magnificent views over pristine Mystery Lake. A unique opportunity to own over 20 acres of true paradise with age old stone walls,fragrant woodlands, wild flowers,peace and quiet.
         </p>
 
-        <div class="details container">
+        <div class="details container-flux">
          <div class="row">
            <div class="col-sm-6"><%= slice[1].bedroom %> Bed</div>
            <div class="col-sm-6"><%= slice[1].bathroom %> Bath</div>
@@ -180,7 +138,6 @@
          </div>
        </div>
 
-     </div>
      <%= link_to "See More", listing_path(slice[1]), class: "btn btn-default" %>
 
    </div>
