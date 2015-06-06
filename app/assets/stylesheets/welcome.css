@@ -29,6 +29,10 @@
 
 }
 
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:visited {
+  color: white;
+}
+
 .navbar li > a {
   border-radius: 3px;
   margin: 10px;
@@ -43,10 +47,6 @@
 
 
 @media (max-width: 767px){
-
-  .text-content{
-    margin:20px;
-}
 
  .navbar-default .navbar-nav .open .dropdown-menu>li>a{
   color: white;
@@ -236,7 +236,7 @@
 
 }
 
-.col-sm-4, .col-sm-8, .col-sm-12{
+.col-sm-4, .col-sm-8, .col-sm-12, .col-md-6 {
   padding-left: 0px;
   padding-right: 0px;
 }
@@ -246,6 +246,10 @@
   background-color: rgba(51,61,71, 1);
   padding: 20px;
   color: #cecece;
+}
+
+.footer a{
+  color: #cecece
 }
 
 .footer_object{
@@ -263,7 +267,8 @@
 }
 
 .copyright{
-  margin-top: 70px;
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 
@@ -283,3 +288,4 @@ p{
   margin-top: 10px;
   margin-bottom: 10px;
 }
+

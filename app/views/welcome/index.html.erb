@@ -1,4 +1,4 @@
-    <%= render "nav", locals: { all_listings: @all_listings} %>
+<%= render "nav", locals: { all_listings: @all_listings} %>
 
 
 
@@ -31,9 +31,12 @@
 </div>
 
 
+
+
+
 <div class="row">
 
-  <div class="col-sm-8 vcenter-contents">
+  <div class="col-md-8 col-md-offset-2 vcenter-contents">
     <div class="text-content">
       <div class="slide-title">
         LOREM IPSUM
@@ -49,18 +52,11 @@
    </div>
  </div>
 
- <div class="col-sm-4">
-  <div>
-    <div id="map-container">
-    </div>
-  </div>
-</div>
 
 </div>
 
 
-
-
+</div>
 
 
 
@@ -99,7 +95,7 @@
            <div class="col-sm-6"><%= slice[0].bathroom %> Bath</div>
          </div>
          <div class="row">
-          <div class="col-sm-6"><%= slice[0].footage %> SqFt </div>
+          <div class="col-sm-6"><%= number_with_delimiter(slice[0].footage, :delimiter => ',')%> SqFt </div>
            <div class="col-sm-6"><span class="sold">SOLD</span></div>
          </div>
        </div>
@@ -133,7 +129,7 @@
            <div class="col-sm-6"><%= slice[1].bathroom %> Bath</div>
          </div>
          <div class="row">
-           <div class="col-sm-6"><%= slice[1].footage %> SqFt</div>
+           <div class="col-sm-6"><%= number_with_delimiter(slice[1].footage, :delimiter => ',')%> SqFt</div>
            <div class="col-sm-6"><span class="sold">SOLD</span></div>
          </div>
        </div>
@@ -166,15 +162,36 @@
 <% end %>
 
 
+
 <div class="row">
 
+  <div class="col-sm-8 vcenter-contents">
+    <div class="text-content">
+      <div class="slide-title">
+        LOREM IPSUM
+      </div>
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <p>
+         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+       </p>
+     </div>
+   </div>
+ </div>
 
-
-
-
+ <div class="col-sm-4">
+  <div>
+    <div id="map-container">
+    </div>
+  </div>
 </div>
 
 </div>
 
 
-<%= render "layouts/footer" %>
+</div>
+
+
+<%= render "/layouts/footer" %>
