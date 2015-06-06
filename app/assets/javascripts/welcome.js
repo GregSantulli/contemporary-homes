@@ -94,4 +94,3 @@ var ready = function() {
 
 
 $(document).ready(ready);
-$(window).load(ready)
