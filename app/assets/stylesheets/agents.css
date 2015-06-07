@@ -1,0 +1,71 @@
+
+
+.agents_container{
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("/assets/agent_background.jpg");
+  background-size: cover;
+  background-repeat: none;
+  position: absolute;
+  padding-top: 30px;
+}
+
+
+
+.agents.container{
+  width: 90%;
+  margin-top: 70px;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+.agents .row {
+  height: auto;
+  text-align: center;
+  border-bottom: 0px;
+  margin: 20px;
+  background-color: white;
+  margin: 0px;
+  margin-bottom: 20px;
+
+}
+
+.agent-image-container{
+  height:300px;
+  margin: 0px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.agents .row > div.col-md-3 {
+  height: 300px;
+  padding: 0px;
+}
+
+
+.agents img {
+  width: 100%;
+  /*min-height: 300px;*/
+  max-width: 350px;
+  margin:auto;
+}
+
+
+
+.agent-details{
+  height: auto;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  text-align: left;
+  padding: 40px;
+}
+
+.agents .col-md-3, .agents .col-md-2{
+  padding: 0px;
+}
+
+.contact{
+  margin-top: 20px;
+}

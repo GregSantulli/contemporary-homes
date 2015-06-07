@@ -21,4 +21,9 @@ class UserController < ApplicationController
     redirect_to '/'
   end
 
+  def show
+    @all_listings = Listing.all
+    @agents = User.all
+  end
+
 end
